@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<Schema name="factpurchase">
+<!--
+  == This software is subject to the terms of the Eclipse Public License v1.0
+  == Agreement, available at the following URL:
+  == http://www.eclipse.org/legal/epl-v10.html.
+  == You must accept the terms of that agreement to use this software.
+  ==
+  == Copyright (C) 2000-2005 Julian Hyde
+  == Copyright (C) 2005-2011 Pentaho and others
+  == All Rights Reserved.
+  -->
+
+<!-- Shared dimensions -->
+
+  
+
+<!-- Purchase -->
+<Cube name="pembelian" defaultMeasure="Total">
+  <!-- Use annotations to provide translations of this cube's caption and
+       description into German and French. Use of annotations in this manner is
+       experimental and unsupported; just for testing right now. -->
+  
+  <Table name="fakta_pembelian"/>
+ 
+  <Dimension name="Time" foreignKey="DateID">
+    <Hierarchy hasAll="true" allMemberName="All Times" primaryKey="DateID">
+      <Table name="dimensi_waktu" />
+      <Level name="Tahun" column="Tahun" type="Numeric" uniqueMembers="true"
+          levelType="TimeYears"/>
+      <Level name="Bulan" column="Bulan" uniqueMembers="false" type="Numeric"
+          levelType="TimeMonths"/>
+      <Level name="Tanggal" column="Tanggal" uniqueMembers="false" type="Numeric"
+          levelType="TimeDays"/>
+    </Hierarchy>
+   
+  </Dimension>
+
+  <Dimension name="Product" foreignKey = "ProductID">
+    <Hierarchy hasAll="true" allMemberName="All Products" primaryKey ="ProductID">
+      <Table name="dimensi_inventory" />
+      <Level name="LocationID" column="LocationID"/>
+    </Hierarchy>
+  </Dimension>
+
+  <Dimension name="Purchase" foreignKey="PurchaseOrderID">
+    <Hierarchy  hasAll="true" allMemberName="All Purchase" primaryKey  = "PurchaseOrderID">
+        <Table name="dimensi_purchase"/>
+        <Level name="UnitPrice" column="UnitPrice"/>
+    </Hierarchy>
+  </Dimension>
+  <Measure name="Quantity" column="Quantity" aggregator="sum"
+      formatString="Standard"/>
+  <Measure name="SubTotal" column="SubTotal" aggregator="sum"
+      formatString="Standard"/>
+
+  
+</Cube>
+
+</Schema>
