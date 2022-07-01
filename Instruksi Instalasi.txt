@@ -1,0 +1,23 @@
+Dibuat oleh
+Kelompok 14 (Pararel A):
+- Yovan Febriawan N.	19082010037
+- Ahadian Amar		19082010017
+- Hastri Cantya D.	19082010056
+- Noer Alam Yahya	19082010090
+- Erindra Reynaldi 	19082010119
+
+
+Langkah-langkah yang dibutuhkan untuk menjalankan app dengan baik : 
+1. Install database server : MySql (disini kami menggunakan XAMPP versi terbaru).
+2. Install software MySQL management : phpMyAdmin dari Xampp.
+3. Extract Folder Final Project yang berbentuk .zip pada folder htdocs XAMPP (xampp/htdocs).
+4. Jalankan Xampp control panel.
+5. Start apache dan mysql server.
+6. Buka phpMyAdmin (localhost/phpMyadmin).
+7. Buat database dengan nama project_uts.
+8. Lakukan import pada file project_uts.sql pada database di langkah 7
+9. Download dan Extract mondrian.zip dari link dari ilmu yang sudah disediakan dari pak irwan ke dalam server Tomcat bawaan dari XAMPP (xampp/tomcat/webapps).
+10. Letakkan file mondrian.war pada folder xampp\tomcat\webapps sedangkan untuk file mysql-conector-java diletakkan pada folder xampp\tomcat\webapps\mondrian\WEB-INF\lib.
+11. Jalankan aplikasi dengan mengakses http://localhost:8080/mondrian. Akan muncul halaman berhasil menginstall yang merupakan tanda bahwa mondrian sudah bisa digunakan.
+12. Letakkan file dengan format .jsp dan .xml pada folder xampp\tomcat\webapps\mondrian\WEB-INF\queries sedangkan untuk file dengan format php diletakkan dalam folder xampp\htdocs\’folder tujuan’.
+13. Buka browser untuk mengakses link localhost/‘folder tujuan’ dan aplikasi telah selesai diinstall.
