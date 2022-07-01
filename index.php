@@ -91,7 +91,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="penjualan_tahunan.php">
                     <i class="fas fa-store"></i>
-                    <span>Chart Pembelian Tahunan</span>
+                    <span>Chart Penjualan Tahunan</span>
                 </a>
             </li>
 
